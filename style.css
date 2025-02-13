@@ -1,0 +1,559 @@
+/* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #f2f2f2;
+    background-color: #eeeeee;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+h1, h2, h3 {
+    color: #fdae31;
+}
+
+button, input, textarea {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Header */
+header {
+    background-color: #fdae31;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li a {
+    color: black;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+    color: white;
+    font-size: 1.2rem;
+}
+
+/* Section Styles */
+section {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #333;
+
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+    color: #fdae31;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+section p {
+    color: #ccc;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Button Styles */
+button {
+    padding: 10px 20px;
+    background-color: #fdae31;
+    border: none;
+    border-radius: 5px;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #e0b800;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #222;
+    text-align: center;
+    padding: 30px 20px; /* Add some padding for spacing */
+}
+
+.footer_div {
+    display: flex; /* Arrange divs in a row */
+    justify-content: space-between; /* Space divs evenly */
+    align-items: center; /* Center content vertically */
+    gap: 20px; /* Add spacing between divs (optional) */
+}
+
+.footer_div div {
+    width: 30%; /* Ensure equal space for each div */
+    text-align: center; /* Center the text/content inside each div */
+}
+
+footer .social-icons {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    gap: 15px; /* Add consistent spacing between icons */
+    padding: 20px 0;
+}
+
+footer .social-icons a {
+    color: #fdae31;
+    font-size: 1.5rem;
+    transition: color 0.3s;
+    text-decoration: none;
+}
+
+footer .social-icons a:hover {
+    color: #fff;
+}
+
+footer nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+footer nav ul li {
+    display: inline-block; /* Make list items inline */
+    margin: 0 10px; /* Add spacing between items */
+}
+
+footer nav ul a {
+    color: #33c915;
+    text-decoration: none;
+}
+
+footer nav ul a:hover {
+    color: #ccc;
+    text-decoration: underline;
+}
+
+footer form input[type="email"] {
+    padding: 10px;
+    border: 1px solid #270202;
+    border-radius: 5px;
+    margin-right: 10px;
+    width: 50%; /* Adjust width */
+}
+
+footer form button {
+    padding: 10px 15px;
+    background-color: #fdae31;
+    color: #000;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+footer form button:hover {
+    background-color: white;
+    color: #333;
+}
+
+/* Utility Classes */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.text-highlight {
+    color: #fdae31;
+    font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header nav ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    section {
+        padding: 30px 10px;
+    }
+
+    footer form input[type="email"] {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    footer form button {
+        width: 100%;
+    }
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding:  0;
+    margin: 20px auto;
+    /* background: linear-gradient(135deg, #444, #222); */
+    color: #fdae31;
+    position: relative;
+    width: 100%;
+    /*height: 400px; /* Adjust the height as per your needs */
+    overflow: hidden; /* Prevents overflow */
+    animation-play-state: running; /* Default state for animation */
+    transition: all 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Pause animation on hover */
+/* .hero:hover {
+    animation-play-state: paused; 
+} */
+.hero:hover .hero-slides {
+    animation-play-state: paused; /* Pause the animation when hovering */
+}
+
+/* Slide Container */
+.hero-slides {
+    display: flex;
+    width: 100%; /* 3 slides, each taking up 100% width */
+    animation: slideAnimation 15s infinite; /* Slower animation */
+}
+
+/* Slide */
+.hero-slides .slide {
+    width: 80%; /* Each slide takes up full width of the container */
+    /*height: 100%; /* Set slide height to 100% to avoid cropping */
+    object-fit: contain; /* Ensures images cover the space without stretching */
+    object-position: center; /* Keeps the image centered */
+    padding: 10px;
+}
+
+/* Keyframes for Slide Animation */
+@keyframes slideAnimation {
+    0%, 100% {
+        transform: translateX(0); /* Show the first slide */
+    }
+    33.33% {
+        transform: translateX(-100%); /* Move to the second slide */
+    }
+    66.66% {
+        transform: translateX(-200%); /* Move to the third slide */
+    }
+}
+
+
+.hero h1 {
+    font-size: 2.5rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin: 1rem 0;
+}
+
+/* VIDEO SECTION */
+.video_section{
+padding: 100px;
+/* background-color: #333; */
+}
+.video_div {
+    /* background-color: #333; */
+display: flex;
+justify-content: space-between;
+
+
+}
+
+.video_div div{
+
+    width: 40%;
+}
+.video_div div video{
+height: 250px;
+}
+
+/* Cards Section */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem;
+}
+.cards div:hover{
+zoom: 1.1;
+
+
+
+}
+
+.card {
+    background-color: #e6dddd;
+    color: #333;
+    /* background-color: #333; */
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    padding: 1.5rem;
+}
+
+
+.card img {
+    max-width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.card h3 {
+    margin: 1rem 0 0.5rem;
+    font-size: 1.2rem;
+}
+
+.card p {
+    font-size: 0.9rem;
+    color: #333;
+}
+.testimonials{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem;
+
+}
+.testimonial{
+    background-color: #e6dddd;
+    color: #333;
+    /* background-color: #333; */
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    padding: 1.5rem;
+}
+.testimonial:hover{
+zoom: 1.1;
+}
+.testimonial p{
+color: #333;
+
+}
+/* Portfolio Section */
+.client-projects{
+    display: inline-block;
+    padding: 30px;
+}
+.projects{
+    display: flex;
+    justify-content: space-between;
+
+}
+.project{
+    width: 30%;
+}
+.project:hover{
+    border: 3px solid #fdae31;
+
+}
+.project img{
+    width: 100%;
+}
+
+.project-list {
+
+    display: flex;
+    justify-content: space-between;
+}
+.project-item{
+
+    width: 30%;
+}
+.project-item:hover{
+    border: 3px solid #fdae31;
+}
+
+.project-item img{
+    width: 100%;
+}
+
+/* ABIUT ME PAGE */
+.about-me {
+    display: flex;
+    
+    justify-content: space-between;
+}
+/* FOR MAKING MY PIC CIRCLE */
+.avatar-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    margin: 20px; /* Add some spacing around the avatar */
+    width: 30%;
+    padding-left: 12px;
+}
+
+.avatar {
+    width: 300px; /* Adjust the size of the avatar */
+    height: auto; /* Keep width and height equal for a circle */
+    border-radius: 50%; /* Make it circular */
+    object-fit: cover; /* Ensure the image fits well */
+    border: 3px solid #fdae31; /* Optional: Add a border */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow */
+}
+.avatar{
+    float: left;
+}
+.about-content p img:hover{
+width: 350px;
+}
+.about-content article{
+
+    text-align: justify;
+    word-wrap: break-word;
+}
+
+.about-content article strong{
+color: #fdae31;
+}
+.skill-list{
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+justify-content: space-between;
+
+}
+.skill{
+width: 90%;
+}
+.skill h3:hover {
+color: #eeeeee;
+}
+.experiences{
+    display: grid;
+grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+
+justify-content: space-between;
+
+}
+.experience{
+    width: 90%;
+    border: 5px solid white;
+    border-radius: 10px;
+    margin: 5px;
+    }
+.experience:hover{
+border: 6px solid red;
+
+}
+
+    /* testanomals */
+
+.testimonials{
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    gap: 15px; /* Add consistent spacing between icons */
+    padding: 20px 0;
+
+    }
+.testimonial{
+    width: auto;
+    margin: 5px;
+}
+
+/* Contact Form Section */
+.contact-form {
+    padding: 2rem 1rem;/*ZEESHAN*/
+    background-color: #222;
+    text-align: center;
+    /* text-align: right;*//* AUN CHEEMA*/
+}
+
+.contact-form h2 {
+    margin-bottom: 1rem;
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 1.5rem;
+    background-color: #333;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+.form-group input{
+
+    width: 95%;
+}
+.form-group textarea{
+
+    width: 95%;
+}
+
+label {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    display: block;
+    color: #f2f2f2;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #555;
+    border-radius: 4px;
+    background-color: #444;
+    color: #f2f2f2;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: #fdae31;
+}
+.contact-info{
+ display: flex;
+ justify-content: space-between;
+
+}
+.contact-info div{
+    margin-top: 10px;
+    width: 30%;
+}
+/* button.btn {
+    background-color: #fdae31;
+    color: #000;
+    font-weight: bold;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button.btn:hover {
+    background-color: #e0b800;
+    color: #000;
+} */
+
+

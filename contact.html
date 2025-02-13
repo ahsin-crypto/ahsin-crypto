@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Get in touch with me through the contact form, email, or phone.">
+  <title>Contact | Web Designer Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Contact Me</h1>
+    <p>Feel free to reach out for any inquiries, collaborations, or project discussions.</p>
+  </section>
+
+  <!-- Contact Form Section -->
+  <section class="contact-form">
+    <h2>Send Me a Message</h2>
+    <form action="submit.php" method="POST">
+      <div class="form-group">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Your Email</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+      </div>
+      <div class="form-group">
+        <label for="message">Your Message</label>
+        <textarea id="message" name="message" rows="5" placeholder="Type your message here" required></textarea>
+      </div>
+      <button type="submit" class="btn">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Contact Details Section -->
+  <section class="contact-details">
+    <h2>Get in Touch</h2>
+    <div class="contact-info">
+      <div class="contact-item">
+        <i class="fas fa-phone"></i>
+        <p><strong>Phone:</strong> +123-456-7890</p>
+      </div>
+      <div class="contact-item">
+        <i class="fas fa-envelope"></i>
+        <p><strong>Email:</strong> info@webdesigner.com</p>
+      </div>
+      <div class="contact-item">
+        <i class="fas fa-map-marker-alt"></i>
+        <p><strong>Address:</strong> 123 Web Street, Design City, Creativityland</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Map Section -->
+  <section class="map">
+    <h2>Find Me Here</h2>
+    <div class="map-container">
+      <img src="images/map-placeholder.jpg" alt="Map Placeholder" class="map-image">
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer_div">
+     <div class="social-icons">
+       <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+       <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+       <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+       <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+     </div>
+     <div>
+       <nav>
+         <ul>
+           <li><a href="home.html">Home</a></li>
+           <li><a href="portfolio.html">Portfolio</a></li>
+           <li><a href="about.html">About</a></li>
+           <li><a href="contact.html">Contact</a></li>
+         </ul>
+       </nav>
+     </div>
+     <div>
+       <h2>Stay Updated</h2>
+       <p>Subscribe to my newsletter to get the latest updates and tips.</p>
+       <form action="#" method="POST">
+         <input type="email" name="email" placeholder="Enter your email" required>
+         <button type="submit">Subscribe</button>
+       </form>
+     </div>
+    
+    </div>
+     <p>&copy; 2025 Web Designer Portfolio. All Rights Reserved.</p>
+   </footer>
+</body>
+</html>

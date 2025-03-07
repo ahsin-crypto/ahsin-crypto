@@ -1,0 +1,180 @@
+<!-- courses.html (Courses Page) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses - LMS</title>
+    <link rel="stylesheet" href="lms.js">
+</head>
+<body>
+    <nav>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="courses.html">Courses</a>
+        <a href="index.html">Logout</a>
+    </nav>
+    <div class="container">
+        <h2>Courses</h2>
+        <input type="text" id="courseName" placeholder="Enter Course Name">
+        <input type="text" id="courseDetails" placeholder="Enter Course Details">
+        <button onclick="addCourse()">Add Course</button>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Details</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="courseTable">
+                <tr onclick="showCourseDetails(0)"><td><a href="#">Web Development</a></td><td>HTML, CSS, JavaScript</td><td><button onclick="deleteCourse(event, 0)">Delete</button></td></tr>
+                <tr onclick="showCourseDetails(1)"><td><a href="#">Data Science</a></td><td>Python, Machine Learning</td><td><button onclick="deleteCourse(event, 1)">Delete</button></td></tr>
+                <tr onclick="showCourseDetails(2)"><td><a href="#">Graphic Design</a></td><td>Photoshop, Illustrator</td><td><button onclick="deleteCourse(event, 2)">Delete</button></td></tr>
+                <tr onclick="showCourseDetails(3)"><td><a href="#">Cybersecurity</a></td><td>Network Security, Ethical Hacking</td><td><button onclick="deleteCourse(event, 3)">Delete</button></td></tr>
+                <tr onclick="showCourseDetails(4)"><td><a href="#">Artificial Intelligence</a></td><td>Neural Networks, Deep Learning</td><td><button onclick="deleteCourse(event, 4)">Delete</button></td></tr>
+                <tr onclick="showCourseDetails(5)"><td><a href="#">Mobile App Development</a></td><td>Android, iOS, Flutter</td><td><button onclick="deleteCourse(event, 5)">Delete</button></td></tr>
+            </tbody>
+        </table>
+        <div id="courseDetailsSection" class="hidden">
+            <h3>Course Details</h3>
+            <p id="courseDescription"></p>
+            <button onclick="hideCourseDetails()">Close</button>
+        </div>
+    </div>
+    <script>
+        let courses = [
+            { name: "Web Development", details: "Learn how to build modern websites using HTML, CSS, and JavaScript." },
+            { name: "Data Science", details: "Master data analysis and machine learning with Python." },
+            { name: "Graphic Design", details: "Explore creative design with Photoshop and Illustrator." },
+            { name: "Cybersecurity", details: "Understand network security and ethical hacking techniques." },
+            { name: "Artificial Intelligence", details: "Dive into neural networks and deep learning concepts." },
+            { name: "Mobile App Development", details: "Build Android and iOS apps using Flutter." }
+        ];
+        function addCourse() {
+            let name = document.getElementById("courseName").value;
+            let details = document.getElementById("courseDetails").value;
+            if (name && details) {
+                courses.push({ name, details });
+                renderCourses();
+            }
+        }
+        function renderCourses() {
+            let table = document.getElementById("courseTable");
+            table.innerHTML = "";
+            courses.forEach((course, index) => {
+                table.innerHTML += `<tr onclick="showCourseDetails(${index})">
+                    <td><a href="#">${course.name}</a></td>
+                    <td>${course.details}</td>
+                    <td><button onclick="deleteCourse(event, ${index})">Delete</button></td>
+                </tr>`;
+            });
+        }
+        function deleteCourse(event, index) {
+            event.stopPropagation();
+            courses.splice(index, 1);
+            renderCourses();
+        }
+        function showCourseDetails(index) {
+            document.getElementById("courseDescription").innerText = courses[index].details;
+            document.getElementById("courseDetailsSection").classList.remove("hidden");
+        }
+        function hideCourseDetails() {
+            document.getElementById("courseDetailsSection").classList.add("hidden");
+        }
+        renderCourses();
+    </script>
+    <style>
+        .hidden {
+            display: none;
+        }
+        #courseDetailsSection {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #0ba747;
+        }
+        a {
+            text-decoration: none;
+            color: blue;
+            cursor: pointer;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0px 0px 10px gray;
+            border-radius: 10px;
+        }
+        h2 {
+            color: #333;
+        }
+        .section {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .course {
+            width: 120px;
+            height: 120px;
+            background: #d1f7c4;
+            padding: 10px;
+            border-radius: 50%;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+        .course:hover {
+            background: gold;
+            box-shadow: 0 0 20px gold, 0 0 40px yellow;
+            transform: scale(1.1);
+        }
+        a {
+            display: block;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: blue;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            width: 150px;
+            margin: 20px auto;
+        }
+        a:hover {
+            background-color: darkblue;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Available Courses</h1>
+
+        <div class="section">
+            <div class="course">Mathematics</div>
+            <div class="course">Physics</div>
+            <div class="course">Programming</div>
+            <div class="course">History</div>
+        </div>
+
+        <a href="dashboard.html">Back to Dashboard</a>
+    </div>
+
+</body>
+</html>
